@@ -1,5 +1,8 @@
 <template>
-  <div>首页</div>
+  <div>
+    首页
+    <i class="wm-icon-plus"></i>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,5 +15,6 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
 </style>
