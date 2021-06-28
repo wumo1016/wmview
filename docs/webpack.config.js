@@ -12,11 +12,10 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js'
   },
-    resolve: {
+  resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      vue: 'vue/dist/vue.esm-browser.js',
-      examples: path.resolve(__dirname),
+      vue: 'vue/dist/vue.esm-browser.js'
     },
   },
   module: {
@@ -31,11 +30,17 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
+        test: /\.(sass|scss|css)$/,
         use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
+        ],
       }
     ]
   },
