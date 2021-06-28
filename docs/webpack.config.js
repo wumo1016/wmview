@@ -6,7 +6,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 module.exports = {
   mode: isProd ? "production" : "development",
   entry: {
-    index: path.resolve(__dirname, 'main.ts'),
+    index: path.resolve(__dirname, './src/main.ts'),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -15,7 +15,10 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      vue: 'vue/dist/vue.esm-browser.js'
+      vue: 'vue/dist/vue.esm-browser.js',
+      '@v': path.resolve(__dirname, './src/views'),
+      '@sty': path.resolve(__dirname, './src/style'),
+      '@r': path.resolve(__dirname, './src/router'),
     },
   },
   module: {
@@ -47,7 +50,7 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html')
+      template: path.resolve(__dirname, './public/index.html')
     }),
   ]
 };
