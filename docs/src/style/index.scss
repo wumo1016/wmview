@@ -1,10 +1,19 @@
+html {
+  font-size: 14px;
+  height: 100%;
+}
+
 body {
   margin: 0;
+  height: 100%;
+  > #app {
+    height: 100%;
+  }
 }
 
 [class^="wm-icon-"] {
   font-family: "wm-icon" !important;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

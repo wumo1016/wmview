@@ -1,5 +1,5 @@
 <template>
-  <div>图标</div>
+  <div>左侧导航</div>
 </template>
 
 <script lang="ts">

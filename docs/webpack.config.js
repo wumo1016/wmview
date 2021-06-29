@@ -3,22 +3,29 @@ const isProd = process.env.NODE_ENV === "production";
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
+const resolve = paths => path.resolve(__dirname, paths)
+
 module.exports = {
   mode: isProd ? "production" : "development",
   entry: {
-    index: path.resolve(__dirname, './src/main.js'),
+    index: resolve('./src/main.js'),
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: resolve('../dist'),
     filename: '[name].js'
+  },
+  devServer: {
+    port: 8080,
+    publicPath: '/',
+    historyApiFallback: true // 使用history路由模式
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
       vue: 'vue/dist/vue.esm-browser.js',
-      '@v': path.resolve(__dirname, './src/views'),
-      '@sty': path.resolve(__dirname, './src/style'),
-      '@r': path.resolve(__dirname, './src/router'),
+      '@v': resolve('./src/views'),
+      '@sty': resolve('./src/style'),
+      '@r': resolve('./src/router'),
     },
   },
   module: {
@@ -50,7 +57,8 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './public/index.html')
+      template: resolve('./public/index.html'),
+      favicon: resolve('./public/favicon.ico')
     }),
   ]
 };

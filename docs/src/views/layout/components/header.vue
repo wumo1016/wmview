@@ -1,16 +1,21 @@
 <template>
-  <div>图标</div>
+  <div>
+    头部
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup() {
-    return {};
-  },
-});
+  setup () {
+    
+
+    return {}
+  }
+})
 </script>
 
 <style scoped>
+
 </style>
