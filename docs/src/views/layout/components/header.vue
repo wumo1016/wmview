@@ -1,9 +1,8 @@
 <template>
   <div class="header_wrapper">
     <div class="left_box">
-      <img class="logo" src="@/assets/images/logo.png" alt="" />
+      <img class="logo" src="@/assets/images/logo3.svg" alt="" />
       <img class="logo1" src="@/assets/images/logo1.png" alt="" />
-      <!-- <div>wm-ui</div> -->
     </div>
   </div>
 </template>
@@ -22,21 +21,39 @@ export default defineComponent({
 .header_wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 0 2vw;
   border-bottom: 1px solid rgba(219, 219, 219, 0.3);
   .left_box {
     display: flex;
     align-items: center;
   }
   .logo {
-    height: 70%;
+    height: 100%;
     width: auto;
-    transform: rotate(-45deg);
+    transform: rotate(90deg);
+    animation: rotate 1.6s 1 ease;
   }
-  .logo1{
+  .logo1 {
     height: 60%;
     width: auto;
-    margin-left: 10px;
+    animation: move 1.6s 1 ease;
+    transform: translateX(-20px);
   }
+  @keyframes rotate {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(810deg);
+    }
+  }
+  @keyframes move {
+    from {
+      transform: translateX(200px);
+    }
+    to {
+      transform: translateX(-20px);
+    }
+  }
+  // rgb(255, 153, 0)
 }
 </style>
