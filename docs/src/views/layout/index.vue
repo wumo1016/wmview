@@ -29,10 +29,10 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .layout_wrapper {
   height: 100%;
-  $headerHeight: 50px;
+  $headerHeight: 70px;
   $leftWidth: 200px;
   $rightWidth: 150px;
 

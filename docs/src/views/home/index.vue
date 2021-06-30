@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header class="home_header" />
     <i class="wm-icon-plus"></i>
   </div>
 </template>
@@ -17,5 +17,8 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.home_header{
+  height: 70px;
+}
 </style>
