@@ -1,25 +1,20 @@
 <template>
   <div class="layout_wrapper">
-    <Header class="layout_header" />
-    <div class="layout_content_wrapper">
-      <LeftNav class="layout_left" />
-      <div class="layout_content">
-        <router-view></router-view>
-      </div>
-      <RightNav class="layout_right" />
+    <LeftNav class="layout_left" />
+    <div class="layout_content">
+      <router-view></router-view>
     </div>
+    <RightNav class="layout_right" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "./components/header.vue";
 import LeftNav from "./components/left-nav.vue";
 import RightNav from "./components/right-nav.vue";
 
 export default defineComponent({
   components: {
-    Header,
     LeftNav,
     RightNav,
   },
@@ -31,19 +26,11 @@ export default defineComponent({
 
 <style lang="scss">
 .layout_wrapper {
-  height: 100%;
   $headerHeight: 70px;
   $leftWidth: 200px;
   $rightWidth: 150px;
-
-  .layout_header {
-    height: $headerHeight;
-  }
-
-  .layout_content_wrapper {
-    height: calc(100% - $headerHeight);
-    display: flex;
-  }
+  height: calc(100% - $headerHeight);
+  display: flex;
 
   .layout_left {
     width: $leftWidth;

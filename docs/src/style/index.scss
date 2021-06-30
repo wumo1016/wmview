@@ -11,9 +11,14 @@ html {
 body {
   margin: 0;
   height: 100%;
+  background-image: url("@/assets/images/bac.png");
   > #app {
     height: 100%;
   }
+}
+
+li {
+  list-style: none;
 }
 
 [class^="wm-icon-"] {

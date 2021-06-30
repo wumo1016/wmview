@@ -12,11 +12,12 @@ module.exports = {
   },
   output: {
     path: resolve('../dist'),
+    publicPath: '/',
     filename: '[name].js'
   },
   devServer: {
     port: 8080,
-    publicPath: '/',
+    // publicPath: '/',
     historyApiFallback: true // 使用history路由模式
   },
   resolve: {

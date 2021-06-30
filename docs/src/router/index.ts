@@ -26,7 +26,7 @@ const registerRoute = () => {
   const routes = []
   navConfig.forEach(item => {
     routes.push({
-      path: item.path,
+      path: `/component${item.path}`,
       component: getAsyncComponent(item.path),
       meta: {
         title: item.title
@@ -49,6 +49,10 @@ const router = createRouter({
       children: [
         ...registerRoute()
       ]
+    },
+    {
+      path: '/component',
+      redirect: '/component/icon'
     }
   ]
 })

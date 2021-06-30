@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <Header class="home_header" />
-    <i class="wm-icon-plus"></i>
+  <div class="home_wrapper">
+    首页
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "@v/layout/components/header.vue";
 
 export default defineComponent({
-  components: { Header },
+  components: {  },
   setup() {
     return {};
   },
@@ -18,7 +16,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.home_header{
-  height: 70px;
+.home_wrapper {
+
 }
 </style>
