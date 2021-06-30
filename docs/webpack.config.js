@@ -8,7 +8,7 @@ const resolve = paths => path.resolve(__dirname, paths)
 module.exports = {
   mode: isProd ? "production" : "development",
   entry: {
-    index: resolve('./src/main.js'),
+    index: resolve('./src/main.ts'),
   },
   output: {
     path: resolve('../dist'),
@@ -31,13 +31,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.(sass|scss|css)$/,
