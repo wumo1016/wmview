@@ -53,12 +53,12 @@ export default defineComponent({
     height: 100%;
     width: auto;
     transform: rotate(90deg);
-    animation: rotate 1.6s 1 ease;
+    animation: rotate 1s 1 ease;
   }
   .logo1 {
     height: 60%;
     width: auto;
-    animation: move 1.6s 1 ease;
+    animation: move 1s 1 ease;
     transform: translateX(-20px);
   }
   .right_box {
@@ -95,7 +95,7 @@ export default defineComponent({
   }
   @keyframes move {
     from {
-      transform: translateX(200px);
+      transform: translateX(80px);
     }
     to {
       transform: translateX(-20px);
