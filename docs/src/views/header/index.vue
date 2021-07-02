@@ -5,6 +5,18 @@
       <img class="logo1" src="@/assets/images/logo1.png" alt="" />
     </div>
     <div class="right_box">
+      <div class="search_box">
+        <input type="text" @focus="showAdvice = true" />
+        <i class="wm-icon-sousuo"></i>
+      </div>
+      <div v-show="adviceList.length > 0 && showAdvice" class="search_res_box">
+        <ul>
+          <li v-for="item in adviceList" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+        <div class="angle"></div>
+      </div>
       <ul>
         <li
           :class="{ active_tab: route.path.startsWith('/component') }"
@@ -18,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, reactive, toRefs, onMounted, onUnmounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 export default defineComponent({
@@ -26,12 +38,37 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
 
+    const state = reactive({
+      adviceList: [],
+      showAdvice: false,
+    });
+
+    let blurFunc = (e) => {
+      const deviceDom = document.querySelector(
+        ".header_wrapper .search_res_box ul"
+      );
+      const searchDom = document.querySelector(".header_wrapper .search_box");
+      if (!deviceDom.contains(e.target) && !searchDom.contains(e.target)) {
+        state.showAdvice = false;
+      }
+    };
+
+    onMounted(() => {
+      document.addEventListener("click", blurFunc);
+    });
+
+    onUnmounted(() => {
+      document.removeEventListener("click", blurFunc);
+    });
+
     const goPage = (path) => {
       router.push(path);
     };
+
     return {
       goPage,
       route,
+      ...toRefs(state),
     };
   },
 });
@@ -41,7 +78,7 @@ export default defineComponent({
 .header_wrapper {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(219, 219, 219, 0.3);
+  border-bottom: 1px solid $bcolor;
   $headerHeight: 70px;
   height: $headerHeight;
   .left_box {
@@ -62,26 +99,89 @@ export default defineComponent({
     transform: translateX(-20px);
   }
   .right_box {
+    position: relative;
     display: flex;
     align-items: center;
     padding-right: 3rem;
-    ul {
+    > ul {
       height: $headerHeight;
-    }
-    li {
-      height: $headerHeight;
-      line-height: $headerHeight;
-      color: rgba(255, 153, 0, 0.7);
-      cursor: pointer;
-      font-size: 1.3rem;
-      padding: 0 0.5rem;
-      &:hover {
-        color: rgb(255, 153, 0);
+      li {
+        height: $headerHeight;
+        line-height: $headerHeight;
+        color: rgba(255, 153, 0, 0.7);
+        cursor: pointer;
+        font-size: 1.3rem;
+        padding: 0 0.5rem;
+        &:hover {
+          color: $tcolor;
+        }
       }
     }
     .active_tab {
-      color: rgb(255, 153, 0);
-      border-bottom: 2px solid rgb(255, 153, 0);
+      color: $tcolor;
+      border-bottom: 2px solid $tcolor;
+    }
+    $search: 36px;
+    .search_box {
+      width: 200px;
+      height: $search;
+      border-radius: $search / 2;
+      position: relative;
+      margin-right: 20px;
+      i {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: $search;
+        width: $search;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: $tcolor;
+        font-size: 15px;
+      }
+      input {
+        width: 100%;
+        height: 100%;
+        border-width: 1px;
+        border-radius: 21px;
+        padding-left: 20px;
+        padding-right: $search;
+        border: 1px solid $bcolor;
+        transition: all 0.5s;
+        &:hover {
+          border-color: $tcolor;
+        }
+        &:focus {
+          border-color: $tcolor;
+        }
+      }
+    }
+    .search_res_box {
+      position: absolute;
+      left: 0;
+      width: 80%;
+      top: calc(100% - 10px);
+      height: auto;
+      padding: 10px 0;
+      ul {
+        border: 1px solid $bcolor;
+        border-radius: 4px;
+        background: #fff;
+      }
+      .angle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 1px solid $bcolor;
+        left: calc(50% - 10px);
+        top: 5px;
+        transform: rotate(45deg);
+        background: #fff;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
     }
   }
 
@@ -101,6 +201,6 @@ export default defineComponent({
       transform: translateX(-20px);
     }
   }
-  // rgb(255, 153, 0)
+  // $tcolor
 }
 </style>

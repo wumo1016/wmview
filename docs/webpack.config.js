@@ -53,6 +53,14 @@ module.exports = {
               implementation: require('sass'),
             },
           },
+          {
+            loader: 'style-resources-loader',
+            options: {
+              patterns: [
+                resolve('./src/style/variable.scss')
+              ]
+            }
+          }
         ],
       },
       {
