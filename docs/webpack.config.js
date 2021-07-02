@@ -2,6 +2,8 @@ const path = require('path')
 const isProd = process.env.NODE_ENV === "production";
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const resolve = paths => path.resolve(__dirname, paths)
 
@@ -13,11 +15,10 @@ module.exports = {
   output: {
     path: resolve('../dist'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: 'static/js/[name].js'
   },
   devServer: {
     port: 8080,
-    // publicPath: '/',
     historyApiFallback: true // 使用history路由模式
   },
   resolve: {
@@ -44,7 +45,7 @@ module.exports = {
       {
         test: /\.(sass|scss|css)$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',
@@ -58,7 +59,13 @@ module.exports = {
         test: /\.(jpg|png|svg)$/,
         use: [
           {
-            loader: 'url-loader'
+            loader: 'url-loader',
+            options: {
+              esModule: false,
+              name: '[name].[ext]',
+              limit: 10 * 1024,
+              outputPath: 'static/images'
+            }
           }
         ]
       }
@@ -69,6 +76,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve('./public/index.html'),
       favicon: resolve('./public/favicon.ico')
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'static/css/[chunkhash:10].css'
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*']
     }),
   ]
 };
