@@ -105,6 +105,7 @@ export default defineComponent({
     padding-right: 3rem;
     > ul {
       height: $headerHeight;
+      user-select: none;
       li {
         height: $headerHeight;
         line-height: $headerHeight;
@@ -149,7 +150,7 @@ export default defineComponent({
         padding-left: 20px;
         padding-right: $search;
         border: 1px solid $bcolor;
-        transition: all 0.5s;
+        transition: border-color 0.5s;
         &:hover {
           border-color: $tcolor;
         }
@@ -201,6 +202,5 @@ export default defineComponent({
       transform: translateX(-20px);
     }
   }
-  // $tcolor
 }
 </style>
