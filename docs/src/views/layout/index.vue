@@ -26,12 +26,11 @@ export default defineComponent({
 
 <style lang="scss">
 .layout_wrapper {
-  $headerHeight: 70px;
   $leftWidth: 200px;
   $rightWidth: 150px;
-  height: calc(100% - $headerHeight);
+  height: calc(100% - #{$headerHeight});
+  overflow-y: auto;
   display: flex;
-
   .layout_left {
     width: $leftWidth;
   }
