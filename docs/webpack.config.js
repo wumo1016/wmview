@@ -24,7 +24,6 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      vue: 'vue/dist/vue.esm-browser.js',
       '@': resolve('./src'),
       '@v': resolve('./src/views'),
       '@sty': resolve('./src/style'),

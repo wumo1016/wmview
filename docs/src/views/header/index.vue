@@ -126,7 +126,7 @@ export default defineComponent({
     .search_box {
       width: 200px;
       height: $search;
-      border-radius: $search / 2;
+      border-radius: calc(#{$search } / 2);
       position: relative;
       margin-right: 20px;
       i {
