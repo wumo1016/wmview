@@ -79,7 +79,6 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid $bcolor;
-  $headerHeight: 70px;
   height: $headerHeight;
   .left_box {
     display: flex;
