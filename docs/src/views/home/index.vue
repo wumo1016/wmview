@@ -17,7 +17,7 @@
             <h3>Wm View</h3>
             <ul>
               <li>
-                <a href="https://github.com/wumo1016" target="_blank">GitHub</a>
+                <a href="https://github.com/wumo1016/wmview" target="_blank">GitHub</a>
               </li>
               <li>
                 <a
