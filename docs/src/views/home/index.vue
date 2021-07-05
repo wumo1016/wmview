@@ -4,7 +4,7 @@
       <h1>Wm View框架</h1>
       <h2>一套基于Vue3.0的PC端组件库</h2>
       <div class="button_box">
-        <div class="start_use">开始使用吧</div>
+        <div v-ripple class="start_use">开始使用吧</div>
       </div>
       <div class="banner">
         <img src="@/assets/images/banner.svg" alt="" />
@@ -51,8 +51,6 @@
         </div>
       </div>
     </footer>
-    <!-- <div class="s_width">
-    </div> -->
   </div>
 </template>
 
