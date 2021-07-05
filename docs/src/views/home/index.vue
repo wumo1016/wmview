@@ -43,16 +43,16 @@
             </ul>
           </div>
         </div>
+        <div class="copyright">
+          ©2021 BY 舞
+          <a href="https://beian.miit.gov.cn/" target="_blank">
+            豫ICP备19047103号-2
+          </a>
+        </div>
       </div>
     </footer>
-    <div class="s_width">
-      <div class="copyright">
-        ©2021 BY 舞
-        <a href="https://beian.miit.gov.cn/" target="_blank">
-          豫ICP备19047103号-1
-        </a>
-      </div>
-    </div>
+    <!-- <div class="s_width">
+    </div> -->
   </div>
 </template>
 
@@ -68,5 +68,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import './index.scss';
+@import "./index.scss";
 </style>

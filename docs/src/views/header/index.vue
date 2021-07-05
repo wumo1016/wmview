@@ -103,6 +103,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     padding-right: 3rem;
+    flex-wrap: nowrap;
     > ul {
       height: $headerHeight;
       user-select: none;
@@ -124,9 +125,9 @@ export default defineComponent({
     }
     $search: 36px;
     .search_box {
-      width: 200px;
+      max-width: 200px;
       height: $search;
-      border-radius: calc(#{$search } / 2);
+      border-radius: calc(#{$search} / 2);
       position: relative;
       margin-right: 20px;
       i {
