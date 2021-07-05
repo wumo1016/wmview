@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "paths": {
-      "@v/*": ["./docs/src/views"],
       "@r": ["./docs/src/router"],
+      "@/*": ["./docs/src/*"],
     }
   }
 }
