@@ -5,7 +5,7 @@ module.exports = {
     [
       "@babel/preset-typescript",
       {
-        allExtensions: true
+        allExtensions: true // 支持所有文件扩展名 (.vue)
       }
     ]
   ]
