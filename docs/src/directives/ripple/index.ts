@@ -8,14 +8,15 @@ const calculate = (
   let localX = 0
   let localY = 0
 
-  const offset = el.getBoundingClientRect()
+  const offset = el.getBoundingClientRect() // 相当于视窗的位置
 
-  localX = e.clientX - offset.left
+  // 计算点击位置距离元素的距离
+  localX = e.clientX - offset.left 
   localY = e.clientY - offset.top
 
   let radius = 0
   let scale = 0.3
-  radius = Math.sqrt(el.clientWidth ** 2 + el.clientHeight ** 2) / 2
+  radius = Math.sqrt(el.clientWidth ** 2 + el.clientHeight ** 2) / 2 // 平方根
 
   const centerX = `${(el.clientWidth - (radius * 2)) / 2}px`
   const centerY = `${(el.clientHeight - (radius * 2)) / 2}px`
@@ -87,7 +88,7 @@ const ripples = {
       animation.classList.remove('v-ripple__animation--in')
       animation.classList.add('v-ripple__animation--out')
 
-      animation.style.opacity = `calc(0.08 * var(--v-theme-overlay-multiplier))`
+      animation.style.opacity = '0.08'
 
       setTimeout(() => {
         const ripples = el.getElementsByClassName('v-ripple__animation')

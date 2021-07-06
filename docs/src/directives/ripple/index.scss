@@ -5,12 +5,6 @@ $ripple-animation-transition-in: transform 0.25s $decelerated-easing,
   opacity 0.1s $decelerated-easing !default;
 $ripple-animation-transition-out: opacity 0.3s $accelerated-easing !default;
 
-$ripple-animation-visible-opacity: 0.15 !default;
-
-:root {
-  --v-theme-overlay-multiplier: 1;
-}
-
 .v-ripple {
   &__container {
     color: inherit;
@@ -22,7 +16,7 @@ $ripple-animation-visible-opacity: 0.15 !default;
     top: 0;
     overflow: hidden;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none; // 阻止用户的点击动作产生任何效果
     contain: strict;
   }
   &__animation {
@@ -31,7 +25,7 @@ $ripple-animation-visible-opacity: 0.15 !default;
     top: 0;
     left: 0;
     border-radius: 50%;
-    background: currentColor;
+    background: currentColor; // 设置为当前文字的颜色
     opacity: 0;
     pointer-events: none;
     overflow: hidden;
