@@ -1,5 +1,5 @@
 import { ObjectDirective, DirectiveBinding } from 'vue';
-import './ripple.scss'
+import './index.scss'
 
 const rippleStop = Symbol('rippleStop')
 
