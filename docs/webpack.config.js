@@ -1,10 +1,11 @@
 const path = require('path')
-const isProd = process.env.NODE_ENV === "production";
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+const isProd = process.env.NODE_ENV === "production";
 const resolve = paths => path.resolve(__dirname, paths)
 
 module.exports = {
