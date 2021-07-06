@@ -1,8 +1,6 @@
 import { ObjectDirective, DirectiveBinding } from 'vue';
 import './index.scss'
 
-const rippleStop = Symbol('rippleStop')
-
 const calculate = (
   e: MouseEvent,
   el: HTMLElement,
