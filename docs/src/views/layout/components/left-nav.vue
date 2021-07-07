@@ -2,6 +2,7 @@
   <div class="left_menu">
     <ul>
       <li
+        v-ripple
         v-for="item in menuList"
         :key="item.path"
         :class="[
@@ -63,15 +64,19 @@ export default defineComponent({
   }
   .menu_item {
     position: relative;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
     padding: 0 16px 0 28px;
     height: 46px;
     line-height: 46px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    user-select: none;
     transition: border-color 0.3s, background 0.3s,
       padding 0.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    &:hover {
+      color: #1890ff;
+    }
     &::after {
       content: "";
       position: absolute;

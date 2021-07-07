@@ -67,7 +67,7 @@ const ripples = {
 
       animation.style.transform = `translate(${centerX}, ${centerY}) scale3d(1,1,1)`
 
-      animation.style.opacity = '0.3'
+      animation.style.opacity = '0.16'
     }, 0)
   },
 
