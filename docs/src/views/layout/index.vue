@@ -1,22 +1,22 @@
 <template>
   <div class="layout_wrapper">
-    <LeftNav class="layout_left" />
+    <left-nav class="layout_left" />
     <div class="layout_content">
       <router-view></router-view>
     </div>
-    <RightNav class="layout_right" />
+    <right-affix class="layout_right" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import LeftNav from "./components/left-nav.vue";
-import RightNav from "./components/right-nav.vue";
+import leftNav from "./components/left-nav.vue";
+import rightAffix from "./components/right-affix.vue";
 
 export default defineComponent({
   components: {
-    LeftNav,
-    RightNav,
+    leftNav,
+    rightAffix,
   },
   setup() {
     return {};
@@ -31,12 +31,14 @@ export default defineComponent({
   height: calc(100% - #{$headerHeight});
   overflow-y: auto;
   display: flex;
+
   .layout_left {
     width: $leftWidth;
   }
 
   .layout_content {
     width: calc(100% - #{$leftWidth + $rightWidth});
+    padding: 40px 30px;
   }
 
   .layout_right {
