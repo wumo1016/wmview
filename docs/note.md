@@ -1,0 +1,6 @@
+- babel相关
+  - `babel-loader`: babel loader
+  - `@babel/core`: babel核心包
+  - `@babel/preset-env`: babel转换预设
+  - `@babel/preset-typescrip`: 转换ts的预设
+  - `@babel/plugin-transform-runtime`: 转换高级语法(async-await等)
