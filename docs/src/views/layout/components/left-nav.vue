@@ -31,7 +31,6 @@ export default defineComponent({
     const state = reactive({
       menuList,
     });
-    console.log(menuList);
 
     const goPage = (item) => {
       router.push(`/component${item.path}`);

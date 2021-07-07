@@ -4,7 +4,7 @@
       <h1>Wm View框架</h1>
       <h2>一套基于Vue3.0的PC端组件库</h2>
       <div class="button_box">
-        <div v-ripple class="start_use">开始使用吧</div>
+        <div v-ripple class="start_use" @click="startUse">开始使用吧</div>
       </div>
       <div class="banner">
         <img src="@/assets/images/banner.svg" alt="" />
@@ -17,7 +17,9 @@
             <h3>Wm View</h3>
             <ul>
               <li>
-                <a href="https://github.com/wumo1016/wmview" target="_blank">GitHub</a>
+                <a href="https://github.com/wumo1016/wmview" target="_blank"
+                  >GitHub</a
+                >
               </li>
               <li>
                 <a
@@ -56,11 +58,21 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
-  components: {},
   setup() {
-    return {};
+    const router = useRouter();
+
+    const startUse = () => {
+      setTimeout(() => {
+        router.push("/component");
+      }, 100);
+    };
+
+    return {
+      startUse,
+    };
   },
 });
 </script>
