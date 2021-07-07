@@ -47,6 +47,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .left_nav {
+  width: $leftWidth;
   height: 100%;
   overflow-y: auto;
   position: relative;

@@ -11,10 +11,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, nextTick } from "vue";
 
 export default defineComponent({
   setup() {
+
+    let scrollContainer
+
+    onMounted(async () => {
+      await nextTick()
+      scrollContainer = document.querySelector('.layout_content')
+      console.log(scrollContainer);
+    })
+
     return {};
   },
 });
