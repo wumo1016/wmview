@@ -26,8 +26,6 @@ export default defineComponent({
 
 <style lang="scss">
 .layout_wrapper {
-  $leftWidth: 200px;
-  $rightWidth: 150px;
   height: calc(100% - #{$headerHeight});
   overflow-y: auto;
   display: flex;
@@ -37,8 +35,11 @@ export default defineComponent({
   }
 
   .layout_content {
-    width: calc(100% - #{$leftWidth + $rightWidth});
+    width: calc(100% - #{$leftWidth});
     padding: 40px 30px;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: calc(#{$rightWidth} + 20px);
   }
 
   .layout_right {

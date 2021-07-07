@@ -78,7 +78,7 @@ export default defineComponent({
 .header_wrapper {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid $bcolor;
+  border-bottom: $cbs;
   height: $headerHeight;
   .left_box {
     display: flex;

@@ -1,5 +1,5 @@
 <template>
-  <div class="left_menu">
+  <div class="left_nav">
     <ul>
       <li
         v-ripple
@@ -46,7 +46,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.left_menu {
+.left_nav {
   height: 100%;
   overflow-y: auto;
   position: relative;
@@ -58,8 +58,8 @@ export default defineComponent({
     top: 16px;
     bottom: 16px;
     right: 0;
-    width: 1px;
-    background: rgba(208, 208, 208, 0.74);
+    border-right: $cbs;
+    z-index: -1;
   }
   .menu_item {
     position: relative;

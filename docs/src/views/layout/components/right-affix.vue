@@ -1,5 +1,13 @@
 <template>
-  <div>右侧导航</div>
+  <div class="right_affix">
+    <div>12</div>
+    <div>12</div>
+    <div>12</div>
+    <div>12</div>
+    <div>12</div>
+    <div>12</div>
+    <div>12</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,5 +20,13 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.right_affix {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  height: auto;
+  width: $rightWidth;
+  border-left: $cbs;
+}
 </style>
