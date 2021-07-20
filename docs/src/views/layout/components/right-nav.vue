@@ -11,22 +11,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, nextTick } from "vue";
+import { defineComponent, onMounted, nextTick, ref } from 'vue'
 
 export default defineComponent({
   setup() {
+    let anchors = ref([])
 
     let scrollContainer
 
     onMounted(async () => {
-      await nextTick()
       scrollContainer = document.querySelector('.layout_content')
-      console.log(scrollContainer);
+      const h3s = scrollContainer.querySelectorAll('h3')
+      console.log(h3s)
     })
 
-    return {};
+    return {}
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>

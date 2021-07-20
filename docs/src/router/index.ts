@@ -5,31 +5,14 @@ import Home from '@v/home/index.vue'
 import navConfig from './config.json'
 
 const registerRoute = () => {
-  const LoadingComponent = {
-    template: `<div style="min-height: 500px; width: 100%;">loading...</div>`,
-  }
-  const ErrorComponent = {
-    template: `
-      <div style="text-align: center;padding: 100px 0;">Loading error. Please refresh the page and try again</div>`,
-  }
-
-  const getAsyncComponent = path => {
-    return defineAsyncComponent({
-      loader: () => import(`@v/components${path}`),
-      delay: 0,
-      timeout: 30000,
-      loadingComponent: LoadingComponent,
-      errorComponent: ErrorComponent,
-    })
-  }
-
   const routes = []
   navConfig.forEach(item => {
+    const { path, title } = item
     routes.push({
-      path: `/component${item.path}`,
-      component: getAsyncComponent(item.path),
+      path: `/component${path}`,
+      component: () => import(`@v/components${path}`),
       meta: {
-        title: item.title
+        title
       }
     })
   })
