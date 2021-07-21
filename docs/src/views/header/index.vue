@@ -1,7 +1,7 @@
 <template>
   <div class="header_wrapper">
     <div class="left_box" @click="goPage('/')">
-      <img class="logo" src="@/assets/images/logo3.svg" alt="" />
+      <img class="logo" src="@/assets/images/logo.svg" alt="" />
       <img class="logo1" src="@/assets/images/logo1.png" alt="" />
     </div>
     <div class="right_box">
@@ -92,8 +92,6 @@ export default defineComponent({
     animation: rotate 1s 1 ease;
   }
   .logo1 {
-    height: 60%;
-    width: auto;
     animation: move 1s 1 ease;
     transform: translateX(-20px);
   }
@@ -109,7 +107,7 @@ export default defineComponent({
       li {
         height: $headerHeight;
         line-height: $headerHeight;
-        color: rgba(255, 153, 0, 0.7);
+        color: rgba(24, 144, 255, 0.7);
         cursor: pointer;
         font-size: 1.3rem;
         padding: 0 0.5rem;
