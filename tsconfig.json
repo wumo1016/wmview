@@ -2,7 +2,8 @@
   "compilerOptions": {
     "paths": {
       "@r": ["./docs/src/router"],
-      "@/*": ["./docs/src/*"],
+      "@/*": ["./docs/src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }
