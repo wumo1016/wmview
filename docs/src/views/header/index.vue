@@ -30,48 +30,48 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, onMounted, onUnmounted } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { defineComponent, reactive, toRefs, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
 export default defineComponent({
   setup() {
-    const route = useRoute();
-    const router = useRouter();
+    const route = useRoute()
+    const router = useRouter()
 
     const state = reactive({
       adviceList: [],
       showAdvice: false,
-    });
+    })
 
     let blurFunc = (e) => {
       const deviceDom = document.querySelector(
-        ".header_wrapper .search_res_box ul"
-      );
-      const searchDom = document.querySelector(".header_wrapper .search_box");
+        '.header_wrapper .search_res_box ul'
+      )
+      const searchDom = document.querySelector('.header_wrapper .search_box')
       if (!deviceDom.contains(e.target) && !searchDom.contains(e.target)) {
-        state.showAdvice = false;
+        state.showAdvice = false
       }
-    };
+    }
 
     onMounted(() => {
-      document.addEventListener("click", blurFunc);
-    });
+      document.addEventListener('click', blurFunc)
+    })
 
     onUnmounted(() => {
-      document.removeEventListener("click", blurFunc);
-    });
+      document.removeEventListener('click', blurFunc)
+    })
 
     const goPage = (path) => {
-      router.push(path);
-    };
+      router.push(path)
+    }
 
     return {
       goPage,
       route,
       ...toRefs(state),
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>

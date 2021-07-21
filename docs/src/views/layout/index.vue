@@ -9,9 +9,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import leftNav from "./components/left-nav.vue";
-import rightNav from "./components/right-nav.vue";
+import { defineComponent } from 'vue'
+import leftNav from './components/left-nav.vue'
+import rightNav from './components/right-nav.vue'
 
 export default defineComponent({
   components: {
@@ -19,9 +19,9 @@ export default defineComponent({
     rightNav,
   },
   setup() {
-    return {};
+    return {}
   },
-});
+})
 </script>
 
 <style lang="scss">

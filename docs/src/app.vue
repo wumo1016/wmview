@@ -4,13 +4,12 @@
 </template>
 
 <script lang="ts">
-import Header from "@v/header/index.vue";
-import { defineComponent } from "vue";
+import Header from '@v/header/index.vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   components: { Header },
-});
-
+})
 </script>
 
 <style lang="scss">

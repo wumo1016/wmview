@@ -5,22 +5,22 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const isProd = process.env.NODE_ENV === "production";
-const resolve = paths => path.resolve(__dirname, paths)
+const isProd = process.env.NODE_ENV === 'production'
+const resolve = (paths) => path.resolve(__dirname, paths)
 
 module.exports = {
-  mode: isProd ? "production" : "development",
+  mode: isProd ? 'production' : 'development',
   entry: {
     index: resolve('./src/main.ts'),
   },
   output: {
     path: resolve('../dist'),
     publicPath: '/',
-    filename: 'static/js/[name].js'
+    filename: 'static/js/[name].js',
   },
   devServer: {
     port: 8080,
-    historyApiFallback: true // 使用history路由模式
+    historyApiFallback: true, // 使用history路由模式
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
@@ -35,7 +35,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
       },
       {
         test: /\.(ts|js)x?$/,
@@ -56,11 +56,9 @@ module.exports = {
           {
             loader: 'style-resources-loader',
             options: {
-              patterns: [
-                resolve('./src/style/variable.scss')
-              ]
-            }
-          }
+              patterns: [resolve('./src/style/variable.scss')],
+            },
+          },
         ],
       },
       {
@@ -72,24 +70,24 @@ module.exports = {
               esModule: false,
               name: '[name].[ext]',
               limit: 10 * 1024,
-              outputPath: 'static/images'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'static/images',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: resolve('./public/index.html'),
-      favicon: resolve('./public/favicon.ico')
+      favicon: resolve('./public/favicon.ico'),
     }),
     new MiniCssExtractPlugin({
-      filename: 'static/css/[chunkhash:10].css'
+      filename: 'static/css/[chunkhash:10].css',
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*']
+      cleanOnceBeforeBuildPatterns: ['**/*'],
     }),
-  ]
-};
+  ],
+}

@@ -57,26 +57,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useRouter } from "vue-router";
+import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
-    const router = useRouter();
+    const router = useRouter()
 
     const startUse = () => {
       setTimeout(() => {
-        router.push("/component");
-      }, 100);
-    };
+        router.push('/component')
+      }, 100)
+    }
 
     return {
       startUse,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss">
-@import "./index.scss";
+@import './index.scss';
 </style>

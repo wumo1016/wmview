@@ -18,31 +18,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { defineComponent, reactive, toRefs } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
-import menuList from "@r/config.json";
+import menuList from '@r/config.json'
 
 export default defineComponent({
   setup() {
-    const router = useRouter();
-    const route = useRoute();
+    const router = useRouter()
+    const route = useRoute()
 
     const state = reactive({
       menuList,
-    });
+    })
 
     const goPage = (item) => {
-      router.push(`/component${item.path}`);
-    };
+      router.push(`/component${item.path}`)
+    }
 
     return {
       ...toRefs(state),
       route,
       goPage,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +54,7 @@ export default defineComponent({
   padding-top: 36px;
   padding-bottom: 50px;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 16px;
     bottom: 16px;
@@ -78,7 +78,7 @@ export default defineComponent({
       color: #1890ff;
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
