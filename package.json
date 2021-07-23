@@ -1,11 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/wumo1016/wmview.git",
-  "author": "wumo1016 <760478279@qq.com>",
-  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "webpack serve --config ./test/webpack.config.js"
   },
