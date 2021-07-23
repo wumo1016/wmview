@@ -1,6 +1,8 @@
 {
   "name": "wmview",
-  "private": true,
+  "version": "0.0.3",
+  "license": "ISC",
+  "private": "true",
   "workspaces": [
     "packages/*"
   ],
@@ -37,5 +39,9 @@
   },
   "dependencies": {
     "vue": "^3.1.2"
-  }
+  },
+  "files": [
+    "dist",
+    "packages"
+  ]
 }

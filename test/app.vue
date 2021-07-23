@@ -1,6 +1,7 @@
 <template>
   <div>
-    <wmButton></wmButton>
+    <wm-button></wm-button>
+    <wm-icon></wm-icon>
   </div>
 </template>
 

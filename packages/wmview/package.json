@@ -1,6 +1,7 @@
 {
   "name": "wmview",
   "version": "0.0.0",
-  "main": "dist/index.esm.js",
-  "license": "ISC"
+  "author": "wumo1016 <760478279@qq.com>",
+  "license": "ISC",
+  "main": "index.js"
 }

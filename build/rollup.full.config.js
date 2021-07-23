@@ -12,8 +12,14 @@ export default {
     vue({
       target: 'browser',
     }),
-    // 默认调用tsconfig.json文件 会生成声明文件
-    typescript(),
+    typescript({
+      tsconfigOverride: {
+        compilerOptions: { // 不生产声明文件
+          declaration: false,
+        },
+        exclude: ['node_modules'],
+      },
+    }),
   ],
   // 排除vue本身不打包
   external(id) {

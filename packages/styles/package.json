@@ -1,9 +1,7 @@
 {
   "name": "styles",
   "version": "0.0.0",
-  "description": "> TODO: description",
   "author": "wumo1016 <760478279@qq.com>",
-  "homepage": "https://github.com/wumo1016/wmview#readme",
   "license": "ISC",
   "main": "lib/styles.js"
 }

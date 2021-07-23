@@ -65,3 +65,8 @@
   - `rollup-plugin-vue`
   - `typescript`: 
   - `rollup-plugin-typescript2`
+
+## 说明
+  - package.json文件
+    - main: 包的入口文件
+    - files: npm发布的文件

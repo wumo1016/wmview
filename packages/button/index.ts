@@ -6,7 +6,6 @@ Button.install = (app: App): void => {
 }
 
 type IWithInstall<T> = T
-
 const _Button: IWithInstall<typeof Button> = Button
 
 export default _Button
