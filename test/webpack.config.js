@@ -12,7 +12,7 @@ module.exports = {
     port: 8080,
   },
   resolve: {
-    extensions: ['.tsx', '.js', '.vue'],
+    extensions: ['.js', '.ts', '.vue', '.tsx'],
   },
   module: {
     rules: [

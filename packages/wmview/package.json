@@ -1,6 +1,6 @@
 {
   "name": "wmview",
   "version": "0.0.0",
-  "main": "index.ts",
+  "main": "dist/index.esm.js",
   "license": "ISC"
 }

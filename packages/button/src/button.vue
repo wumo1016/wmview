@@ -1,19 +1,18 @@
 <template>
   <div>
-    <wmButton></wmButton>
+    <button>按钮</button>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: {},
+  name: 'WmButton',
+  setup() {
+  },
 })
 </script>
 
-<style lang="scss">
-body {
-  padding: 0;
-}
+<style scoped>
 </style>
