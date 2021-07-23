@@ -1,16 +1,17 @@
 <template>
-  <div>按钮</div>
+  <div>appvue</div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup() {
-    return {}
-  },
+  components: {},
 })
 </script>
 
-<style scoped>
+<style lang="scss">
+body {
+  padding: 0;
+}
 </style>
