@@ -2,6 +2,7 @@
   <div>
     <wm-button></wm-button>
     <wm-icon></wm-icon>
+    <i class="wm-icon-plus"></i>
   </div>
 </template>
 

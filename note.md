@@ -60,11 +60,15 @@
 - 9.进入包文件夹 使用 `yarn install` 将包链接至 node_modules 可以去node_modules中查看是否链接成功
 - 10.在目标文件中引入使用
 
-## rollup打包依赖模块
+## 包使用rollup打包
+  - 依赖: `yarn addrollup rollup-plugin-vue typescript rollup-plugin-typescript2 -D -W`
   - `rollup`: 打包工具
   - `rollup-plugin-vue`
   - `typescript`: 
   - `rollup-plugin-typescript2`
+
+## 样式使用gulp单独打包
+  - 依赖:  `yarn add gulp gulp-autoprefixer gulp-cssmin gulp-dart-sass gulp-rename -D -W`
 
 ## 说明
   - package.json文件

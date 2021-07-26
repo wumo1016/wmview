@@ -20,10 +20,15 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
+
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.(woff|eot|ttf|svg|png|jpg|jpeg)$/,
+        loader: 'url-loader',
       },
       {
         test: /\.(sass|scss|css)$/,

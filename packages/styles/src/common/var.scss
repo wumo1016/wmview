@@ -1,0 +1,13 @@
+
+$--color-primary: #409eff;
+$--color-white: #ffffff;
+$--color-black: #000000;
+$--color-success: #67c23a;
+$--color-warning: #e6a23c;
+$--color-danger: #f56c6c;
+$--color-info: #909399;
+
+$namespace: 'wm'; // 命名空间
+$state-prefix: 'is-'; // 状态
+$modifier-separator: '--'; // 修饰
+$element-separator: '__'; // 元素之间的分隔
