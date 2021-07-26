@@ -10,6 +10,7 @@
   "module": "dist/index.esm.js",
   "scripts": {
     "dev": "webpack serve --config ./test/webpack.config.js",
+    "build:full": "npm run build:full-esm && npm run build:styles",
     "build:full-esm": "rollup -c build/rollup.full.config.js",
     "build:full-umd": "webpack --config build/webpack.config.js",
     "build:styles": "gulp build --gulpfile packages/styles/gulpfile.js"

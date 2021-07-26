@@ -5,3 +5,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes loadingSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.loading-spin {
+  display: inline-block;
+  animation: loadingSpin 1s linear infinite;
+}

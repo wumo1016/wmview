@@ -1,8 +1,6 @@
 <template>
   <div>
-    <wm-button></wm-button>
-    <wm-icon></wm-icon>
-    <i class="wm-icon-plus"></i>
+    <wm-icon class="wm-icon-loading" size="18" color="red" tag="i" spin></wm-icon>
   </div>
 </template>
 
@@ -19,3 +17,4 @@ body {
   padding: 0;
 }
 </style>
+ 
