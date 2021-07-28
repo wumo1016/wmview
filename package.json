@@ -52,6 +52,7 @@
   },
   "files": [
     "dist",
-    "packages"
+    "packages",
+    "README.md"
   ]
 }
