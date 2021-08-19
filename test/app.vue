@@ -1,6 +1,6 @@
 <template>
   <div>
-    <wm-icon class="wm-icon-loading" size="18" color="red" tag="i" spin></wm-icon>
+    <wm-icon class="plus"></wm-icon>
   </div>
 </template>
 

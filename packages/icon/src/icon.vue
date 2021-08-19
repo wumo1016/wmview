@@ -31,7 +31,7 @@ export default defineComponent({
       h(props.tag, {
         class: [
           props.class.startsWith('wm-icon')
-            ? 'props.class'
+            ? props.class
             : `wm-icon-${props.class}`,
           spin ? 'loading-spin' : ''
         ],
