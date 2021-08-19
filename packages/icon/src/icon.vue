@@ -6,35 +6,40 @@ export default defineComponent({
   props: {
     class: {
       type: String,
-      required: true,
+      required: true
     },
     color: {
       type: String,
-      default: 'inherit',
+      default: 'inherit'
     },
     size: {
       type: String,
-      default: 'inherit',
+      default: 'inherit'
     },
     tag: {
       type: String,
-      default: 'i',
+      default: 'i'
     },
     spin: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   setup(props) {
     const { size, spin } = props
     return () =>
       h(props.tag, {
-        class: [props.class, spin ? 'loading-spin' : ''],
+        class: [
+          props.class.startsWith('wm-icon')
+            ? 'props.class'
+            : `wm-icon-${props.class}`,
+          spin ? 'loading-spin' : ''
+        ],
         style: {
           fontSize: isNaN(Number(size)) ? size : `${size}px`,
-          color: props.color,
-        },
+          color: props.color
+        }
       })
-  },
+  }
 })
 </script>
