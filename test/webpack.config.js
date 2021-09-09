@@ -8,27 +8,31 @@ const resolve = paths => path.resolve(__dirname, paths)
 module.exports = {
   mode: 'development',
   entry: resolve('./index.js'),
+  devtool: 'eval-source-map',
   devServer: {
-    port: 8080,
+    port: 8080
   },
   resolve: {
     extensions: ['.js', '.ts', '.vue', '.tsx'],
+    alias: {
+      vue: 'vue/dist/vue.esm-browser.js'
+    }
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'vue-loader'
       },
 
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.(woff|eot|ttf|svg|png|jpg|jpeg)$/,
-        loader: 'url-loader',
+        loader: 'url-loader'
       },
       {
         test: /\.(sass|scss|css)$/,
@@ -38,17 +42,17 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('sass'),
-            },
-          },
-        ],
-      },
-    ],
+              implementation: require('sass')
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: resolve('./index.html'),
-    }),
-  ],
+      template: resolve('./index.html')
+    })
+  ]
 }

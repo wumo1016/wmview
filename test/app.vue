@@ -1,15 +1,13 @@
 <template>
   <div>
-    <wm-icon class="plus"></wm-icon>
+    <wm-button type="default">按钮</wm-button>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 
-export default defineComponent({
-  components: {},
-})
+export default defineComponent({})
 </script>
 
 <style lang="scss">
