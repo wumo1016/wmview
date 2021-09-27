@@ -1,6 +1,12 @@
 @import './common/var.scss';
 @import './common/mixin.scss';
 
+@mixin button-style($background, $color, $border-color) {
+  background: $background;
+  color: $color;
+  border: 1px solid $border-color;
+}
+
 @include b(button) {
   text-align: center;
   box-sizing: border-box;
@@ -10,8 +16,26 @@
   border-radius: 4px;
 
   @include m(default) {
-    background: #fff;
-    color: #606266;
-    border: 1px solid #dcdfe6;
+    @include button-style($--color-white, #606266, #dcdfe6);
+  }
+
+  @include m(primary) {
+    @include button-style($--color-primary, $--color-white, $--color-primary);
+  }
+
+  @include m(success) {
+    @include button-style($--color-success, $--color-white, $--color-success);
+  }
+
+  @include m(info) {
+    @include button-style($--color-info, $--color-white, $--color-info);
+  }
+
+  @include m(danger) {
+    @include button-style($--color-danger, $--color-white, $--color-danger);
+  }
+
+  @include m(warning) {
+    @include button-style($--color-warning, $--color-white, $--color-warning);
   }
 }
